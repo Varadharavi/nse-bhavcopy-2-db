@@ -13,8 +13,8 @@ jobs:
 
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
-      DB_NAME: ${{ env.DB_NAME }}
-      COLLECTION_NAME: ${{ env.COLLECTION_NAME }}
+      DB_NAME: ${{ vars.DB_NAME }}
+      COLLECTION_NAME: ${{ vars.COLLECTION_NAME }}
 
     steps:
       - name: Checkout code
@@ -27,7 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo "$DB_NAME, $COLLECTION_NAME"
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
