@@ -2,7 +2,7 @@ name: Daily Python Script
 
 on:
   schedule:
-    - cron: '45 12 * * 1-5'  # Run every weekday at 12:45 PM (UTC)
+    - cron: '*/5 * * * *'  # Run every weekday at 12:45 PM (UTC)
 
 jobs:
   run-script:
